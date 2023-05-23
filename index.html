@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Conversor JavaScript - Trabalho 18</title>
+
+        <!-- === CSS Bootstrap === -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+        <!-- === CSS Local === -->
+        <link rel="stylesheet" href="Css/estilo.css">
+
+         <!-- === JavaScript === -->
+         <script src="JavaScript/main.js"></script>
+        
+    </head>
+
+    <body>
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center titulo">Conversor Temperaturas JavaScript</div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="row">
+                <div class="col-4 p-0" id="calculadora">
+
+                   <div class="displays" id="visor">
+                    <span id="nega"></span>
+                    <span id="ecra"></span> 
+                    <span class="ms-2">ºC</span>
+                    </div>
+
+                    <div class="teclado">
+                        <div class="displays gap-3 linhas py-3">
+                            <div onclick="introduzir('1')" class="displays botoes" id="tecla1">1</div>
+                            <div onclick="introduzir('2')" class="displays botoes" id="tecla2">2</div>
+                            <div onclick="introduzir('3')" class="displays botoes" id="tecla3">3</div>
+                        </div>
+
+                        <div class="displays gap-3 linhas pb-3">
+                            <div onclick="introduzir('4')" class="displays botoes" id="tecla4">4</div>
+                            <div onclick="introduzir('5')" class="displays botoes" id="tecla5">5</div>
+                            <div onclick="introduzir('6')" class="displays botoes" id="tecla6">6</div>
+                        </div>
+
+                        <div class="displays gap-3 linhas pb-3">
+                            <div onclick="introduzir('7')" class="displays botoes" id="tecla7">7</div>
+                            <div onclick="introduzir('8')" class="displays botoes" id="tecla8">8</div>
+                            <div onclick="introduzir('9')" class="displays botoes" id="tecla9">9</div>
+                        </div>
+
+                        <div class="displays gap-3 linhas pb-3">
+                            <div onclick="introduzir('0')" class="displays botoes" id="tecla0">0</div>
+                            <div onclick="introduzir('.')" class="displays botoes" id="tecla.">.</div>
+                            <div onclick="introduzir('-')" class="displays botoes" id="tecla-">-</div>
+                            <div onclick="apagar()" class="displays botoes" id="teclaclr">clr</div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="displays flex-column gap-3 caixa col-5 p-0">
+                    
+                    <div class="fw-bold fs-4 mt-5">Saida</div>
+                    <div class="fw-bold fs-4" id="far"></div>
+                    <div class="fw-bold fs-4 mb-5" id="kel"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="container-fluid">
+            <div class="row">
+                <div class="displays scol-12 text-center">Luis Martins &copy; 2023</div>
+            </div>
+        </footer>
+
+        <!-- === JavaScript Bootstrap === -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    </body>
+
+</html>
