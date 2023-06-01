@@ -4,13 +4,9 @@ function introduzir(tecla){
     let ecra = document.getElementById("ecra");
     let resultados = document.querySelector("#resultados");
 
-    if(ecra != ""){
-        resultados.style.display = "block";
-    }
+    if(ecra != ""){ resultados.style.display = "block"; }
 
-    else{
-        resultados.style.display = "none";
-    }
+    else{ resultados.style.display = "none"; }
 
     if(tecla == "-"){
 
@@ -22,6 +18,7 @@ function introduzir(tecla){
             else{ nega.innerHTML = ""; }
         }
     }
+
     else{
         if(ecra.innerHTML.length < 10){
 
@@ -41,6 +38,7 @@ function introduzir(tecla){
 
                     if(!ecra.innerHTML.includes("0")){ ecra.innerHTML += tecla; }                 
                 }
+
                 else{ ecra.innerHTML += tecla; }
             }  
 
@@ -50,6 +48,7 @@ function introduzir(tecla){
                     ecra.innerHTML = "";
                     ecra.innerHTML += tecla;
                 }
+                
                 else{ ecra.innerHTML += tecla; }
             }
 
