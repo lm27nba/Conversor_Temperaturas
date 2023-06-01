@@ -4,27 +4,47 @@ function introduzir(tecla){
     let ecra = document.getElementById("ecra");
 
     if(tecla == "-"){
-        if(!nega.innerHTML.includes("-")){
-            nega.innerHTML = "-";
-        }
+
+        if(ecra.innerHTML.length == 0){ nega.innerHTML = ""; }
 
         else{
-            nega.innerHTML = "";
+            if(!nega.innerHTML.includes("-")){ nega.innerHTML = "-"; }
+            else{ nega.innerHTML = ""; }
         }
     }
-
     else{
         if(ecra.innerHTML.length < 10){
-            if(tecla == "."){
-                if(!ecra.innerHTML.includes(".")){
+
+            if(tecla == "."){ 
+                if(ecra.innerHTML.length == 0){
+                    ecra.innerHTML += "0";
                     ecra.innerHTML += tecla;
                 }
-            }
-            
-            else{
-                ecra.innerHTML += tecla;
-            }
+                
+                else if(!ecra.innerHTML.includes(".")){ 
+                    ecra.innerHTML += tecla; 
+                }
+            }    
+
+            else if(tecla == "0"){ 
+                if(ecra.innerHTML.length == 1){ 
+                    if(!ecra.innerHTML.includes("0")){
+                        ecra.innerHTML += tecla;
+                    }
+                    
+                }
+                else{ ecra.innerHTML += tecla; }
+            }  
+
+            else{ ecra.innerHTML += tecla; }
         }
+        // else if(tecla != "0" && ecra.innerHTML.length == 1){ 
+    
+        //     if(ecra.innerHTML.includes("0")){ 
+        //         ecra = ""; 
+        //         ecra.innerHTML += tecla; 
+        //     }
+        // }
     }
 
     let temperatura = parseFloat(nega.innerHTML + ecra.innerHTML);
@@ -40,8 +60,8 @@ function introduzir(tecla){
         let farenh = temperatura * 1.8 + 32;
         let kelvin = temperatura + 273.15;
 
-        far.innerHTML = temperatura.toFixed(1) + " ºC = " + farenh.toFixed(2) + " F";
-        kel.innerHTML = temperatura.toFixed(1) + " ºC = " + kelvin.toFixed(2) + " K";
+        far.innerHTML = temperatura.toFixed(1) + " ºC = " + farenh.toFixed(2) + " Fahrenheit";
+        kel.innerHTML = temperatura.toFixed(1) + " ºC = " + kelvin.toFixed(2) + " Kelvin";
     }
 }
 
