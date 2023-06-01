@@ -2,12 +2,22 @@ function introduzir(tecla){
 
     let nega = document.getElementById("nega");
     let ecra = document.getElementById("ecra");
+    let resultados = document.querySelector("#resultados");
+
+    if(ecra != ""){
+        resultados.style.display = "block";
+    }
+
+    else{
+        resultados.style.display = "none";
+    }
 
     if(tecla == "-"){
 
         if(ecra.innerHTML.length == 0){ nega.innerHTML = ""; }
 
         else{
+
             if(!nega.innerHTML.includes("-")){ nega.innerHTML = "-"; }
             else{ nega.innerHTML = ""; }
         }
@@ -15,36 +25,36 @@ function introduzir(tecla){
     else{
         if(ecra.innerHTML.length < 10){
 
-            if(tecla == "."){ 
+            if(tecla == "."){
+
                 if(ecra.innerHTML.length == 0){
                     ecra.innerHTML += "0";
                     ecra.innerHTML += tecla;
                 }
-                
-                else if(!ecra.innerHTML.includes(".")){ 
-                    ecra.innerHTML += tecla; 
-                }
+
+                else if(!ecra.innerHTML.includes(".")){ ecra.innerHTML += tecla; }
             }    
 
             else if(tecla == "0"){ 
+
                 if(ecra.innerHTML.length == 1){ 
-                    if(!ecra.innerHTML.includes("0")){
-                        ecra.innerHTML += tecla;
-                    }
-                    
+
+                    if(!ecra.innerHTML.includes("0")){ ecra.innerHTML += tecla; }                 
                 }
                 else{ ecra.innerHTML += tecla; }
             }  
 
+            else if(tecla != "0"){
+
+                if(ecra.innerHTML.length == 1 && ecra.innerHTML.includes("0")){ 
+                    ecra.innerHTML = "";
+                    ecra.innerHTML += tecla;
+                }
+                else{ ecra.innerHTML += tecla; }
+            }
+
             else{ ecra.innerHTML += tecla; }
         }
-        // else if(tecla != "0" && ecra.innerHTML.length == 1){ 
-    
-        //     if(ecra.innerHTML.includes("0")){ 
-        //         ecra = ""; 
-        //         ecra.innerHTML += tecla; 
-        //     }
-        // }
     }
 
     let temperatura = parseFloat(nega.innerHTML + ecra.innerHTML);
@@ -71,4 +81,5 @@ function apagar(){
     document.getElementById("ecra").innerHTML = "";
     document.getElementById("far").innerHTML = "";
     document.getElementById("kel").innerHTML = "";
+    document.querySelector("#resultados").style.display = "none";
 }
